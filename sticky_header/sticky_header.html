@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- 윈도우xp,윈도우7 을쓰시는분들은 이걸 선언하면은 호환성모드 버튼이 제거됨.  -->
+<!-- 윈도우8부터~윈도우10까지는 호환성모드 버튼을 제거  -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><!-- 선언을 하지않으면 euc-kr로 기본셋팅이 잡혀있음.  -->
+<!-- 유니코드 euc-kr = ANSI 동일한 국문영문전용 ,  utf-8 글로벌   -->
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes"><!-- 브라우저의 UI를 안보이게 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black"><!-- 상태바의 색상 지정 -->
+<meta name="robots" content="index,follow">
+<title>sticky header</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+<link rel="stylesheet" href="/css/common.css" type="text/css">
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css'>
+<script src='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
+</head>
+<body>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	 
+	var stickyHeaderTop = $('.header').offset().top;
+	
+	
+	var stickyHeader = function(){
+		var scrollTop = $(window).scrollTop(); 
+			 
+		
+		if (scrollTop > stickyHeaderTop) { 
+			$('.header').addClass('on');
+		} else {
+			$('.header').removeClass('on'); 
+		}
+	};
+
+	stickyHeader();
+	
+	$(window).scroll(function() {
+		stickyHeader();
+	});
+});
+</script>
+<body>
+
+<!-- 
+130
+http://www.withlifecon.co.kr/images/main/logo_normal.png
+소개
+컨설팅서비스
+고객지원
+온라인 문의
+http://www.withlifecon.co.kr/images/main/btn_home.png
+http://www.withlifecon.co.kr/images/main/btn_navi.png 
+
+
+90px 
+#17264d
+-->
+<div class="header">
+	<div class="header_inner">
+		<h1><img src="http://www.withlifecon.co.kr/images/main/logo_normal.png"></h1>
+		<ul class="gnb clfix">
+			<li><a href="">소개</a></li>
+			<li><a href="">컨설팅서비스</a></li>
+			<li><a href="">고객지원</a></li>
+			<li><a href="">온라인 문의</a></li>
+		</ul>
+		<div class="icon">
+			<a href=""><img src="http://www.withlifecon.co.kr/images/main/btn_home.png"></a>
+			<a href=""><img src="http://www.withlifecon.co.kr/images/main/btn_navi.png "></a>
+		</div>
+	</div>
+</div>
+<div id="visual"></div>
+<style type="text/css">
+.header {height:120px; width:100%; position:absolute; top:0; left:0; transitioN:0.3s all; }
+.header_inner {width:1200px; margin:0 auto; position:relative;}
+.header_inner h1 {position:absolute; top:30px; left:0;  transitioN:0.3s all; }
+.header_inner h1 img {height:40px; }
+.gnb {margin-left:260px;}
+.gnb li {float:left; height:120px;   transitioN:0.3s all; }
+.gnb li + li {margin-left:50px;}
+.gnb li a {display:block; line-height:120px; font-size:16px; color:#fff; transitioN:0.3s all;}
+.icon {position:absolute; top:50px; right:0; transitioN:0.3s all;}
+
+
+#visual{height:1100px; background:black; }
+.on {position:fixed; top:0; left:0; width:100%; height:90px; background:#17264d;  }
+.header.on h1 {top:30px; }
+.header.on .gnb li {height:90px; }
+.header.on .gnb li a {line-height:90px;  }
+.header.on .icon {top:30px; }
+
+</style>
+
+</body>
+
+</body>
+</html>
+
+
+
+
+
+
+
